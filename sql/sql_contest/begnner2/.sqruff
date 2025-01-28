@@ -1,0 +1,6 @@
+[sqlfluff]
+dialect = sqlite
+
+[sqlfluff:indentation]
+indent_unit = tab
+tab_space_size = 3

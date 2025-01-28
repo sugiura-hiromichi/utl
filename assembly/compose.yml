@@ -1,0 +1,6 @@
+services:
+  asm_fedora:
+    build: .
+    image: asm_fedora_img
+    volumes:
+      - ./:/root
