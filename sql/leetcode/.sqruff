@@ -1,0 +1,8 @@
+[sqruff]
+dialect = mysql
+exclude_rules = CP02
+rules = all
+
+[sqruff:indentation]
+indent_unit = tab
+indented_joins = True
