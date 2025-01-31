@@ -33,8 +33,8 @@ Insert Into Confirmations (User_Id, Time_Stamp, Action) Values (
 Select
     S.User_Id,
     round(
-        count(C.Action = 'timeout') Over (Partition By S.User_Id) / count(*), 2
+        count(Case When C.Action = 'confirmed' Then 1 End) / count(*), 2
     ) As Confirmation_Rate
-From Signups As S, Confirmations As C
-Group By S.User_Id, C.Action
+From Signups As S Left Join Confirmations As C Using (User_Id)
+Group By S.User_Id
 ;
